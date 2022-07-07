@@ -1,0 +1,28 @@
+{
+  "First": {
+    "scn_ids": [
+      "s1"
+    ],
+    "title": "foo",
+    "body": "ind",
+    "userId": "xyz"
+  },
+
+  "second": {
+    "scn_ids": [
+      "s2"
+    ],
+    "title": "foo",
+    "body": "ind",
+    "userId": "xyz"
+  },
+
+  "third": {
+    "scn_ids": [
+      "s5"
+    ],
+    "url": "https://www.saucedemo.com/inventory.html",
+    "username": "standard_user",
+    "password": "secret_sauce"
+  }
+}
