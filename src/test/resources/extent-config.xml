@@ -18,7 +18,7 @@
         <protocol>https</protocol>
 
         <!-- title of the document -->
-        <documentTitle>Extent Framework</documentTitle>
+        <documentTitle>Automation Framework</documentTitle>
 
         <!-- report name - displayed at top-nav -->
         <reportName>Build 1</reportName>

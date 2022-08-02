@@ -32,6 +32,7 @@ public class MyStepdefs extends BaseClass {
     public void postMethodIsCalled(String endPoint) {
         response=requestSpecification.post(endPoint);
     }
+
     @And("verify Userid:{string}")
     public void verifyUserid(String userId) {
         String expectedUserId=response.jsonPath().get("userId").toString();
@@ -66,8 +67,6 @@ public class MyStepdefs extends BaseClass {
     public void validUserid() {
 
         requestSpecification=RestAssured.given().contentType("application/json").body(requestPayload);
-
-
     }
 
     @When("post method is called")

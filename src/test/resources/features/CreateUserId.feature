@@ -4,7 +4,7 @@ Feature: Create User ID
     Given testdata
     And BaseURl
 
-  @Sanity
+  @SANITY
     Scenario:Successful creation of UserId-scn_id:s2
     Given valid userid
     When post method is called

@@ -2,7 +2,7 @@ package com.example.demo.StepDefinitions;
 
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
-import org.junit.After;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
@@ -12,14 +12,19 @@ import org.testng.annotations.Test;
         features = "src/test/resources/features",
         glue = { "com.example.demo","classpath/StepDefinitions","classpath/UIStepdefs"
                },
-        plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "json:target/cucumber-report/cucumber.json",
-                "html:target/cucumber-report/cucumber.html"
+        plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "json:test-output/cucumber-report/cucumber.json",
+                "html:test-output/cucumber-report/cucumber.html","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
 
-},dryRun = false,monochrome = true,tags =("@login")
+        },dryRun = false,monochrome = true,tags =("@SANITY")
 )
 
 @Test
 public class TestRunner extends AbstractTestNGCucumberTests {
+    @Override
+    @DataProvider(parallel = true)
+    public Object[][] scenarios() {
+        return super.scenarios();
+    }
 }
 
 

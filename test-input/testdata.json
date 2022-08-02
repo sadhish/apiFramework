@@ -1,7 +1,7 @@
 {
   "First": {
     "scn_ids": [
-      "s1"
+      "s1","s2"
     ],
     "title": "foo",
     "body": "ind",
@@ -10,7 +10,7 @@
 
   "second": {
     "scn_ids": [
-      "s2"
+      "s3"
     ],
     "title": "foo",
     "body": "ind",
@@ -24,5 +24,33 @@
     "url": "https://www.saucedemo.com/inventory.html",
     "username": "standard_user",
     "password": "secret_sauce"
+  },
+
+  "four": {
+    "scn_ids": [
+      "s6"
+    ],
+    "appName": "SauceLabs",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "swagLabsAppPackage":"com.swaglabsmobileapp",
+    "swagLabsAppActivity": "com.swaglabsmobileapp.MainActivity",
+    "UDID":"emulator-5554"
+  },
+  "five": {
+    "scn_ids": [
+      "s7"
+    ],
+    "url": "http://the-internet.herokuapp.com/"
+
+  },
+  "six": {
+    "scn_ids": [
+      "s8"
+    ],
+    "appName": "ApiDemos",
+    "appPackage":"io.appium.android.apis",
+    "appActivity": "io.appium.android.apis.ApiDemos",
+    "UDID":"emulator-5556"
   }
 }
