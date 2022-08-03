@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 3, 2022 04:16:05 PM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 3, 2022 07:08:25 PM</span></a>
 </li>
 </ul>
 </div>
@@ -71,13 +71,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 3, 2022 04:16:05 PM</h3>
+<h3>Aug 3, 2022 07:08:25 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 3, 2022 04:16:39 PM</h3>
+<h3>Aug 3, 2022 07:08:51 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -148,10 +148,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='88%'><b>15</b> steps passed</small></div>
+<div><small data-tooltip='82%'><b>14</b> steps passed</small></div>
 <div>
 <small data-tooltip='5%'><b>1</b> steps failed,
-<b>1</b> skipped, <b data-tooltip='%'>0</b> others
+<b>2</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -165,20 +165,12 @@
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@login</td>
+<td>@internetpage</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100%</td>
-</tr>
-<tr>
-<td>@app</td>
-<td>0</td>
-<td>2</td>
-<td>0</td>
-<td>0</td>
-<td>0%</td>
 </tr>
 <tr>
 <td>@SANITY</td>
@@ -189,6 +181,14 @@
 <td>66.667%</td>
 </tr>
 <tr>
+<td>@app</td>
+<td>0</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
 <td>@products</td>
 <td>1</td>
 <td>0</td>
@@ -197,7 +197,7 @@
 <td>100%</td>
 </tr>
 <tr>
-<td>@internetpage</td>
+<td>@login</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -224,10 +224,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 15,
+passGrandChild: 14,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 1,
+skipGrandChild: 2,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -250,13 +250,200 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@login</a><a class="dropdown-item" href="#">@app</a><a class="dropdown-item" href="#">@SANITY</a><a class="dropdown-item" href="#">@products</a><a class="dropdown-item" href="#">@internetpage</a>
+<a class="dropdown-item" href="#">@internetpage</a><a class="dropdown-item" href="#">@SANITY</a><a class="dropdown-item" href="#">@app</a><a class="dropdown-item" href="#">@products</a><a class="dropdown-item" href="#">@login</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="status-avatar fail-bg">
+            <i class="fa fa-times text-white"></i>
+          </div>
+          <div class="test-detail">
+            <span class="meta text-white badge badge-sm"></span>
+            <p class="name">Login in Android App</p>
+            <p class="text-sm"><span>19:08:31 PM</span> / <span>1.794 secs</span></p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<div class='float-right'><span class='badge badge-default'>#test-id=1</span></div>
+<h5 class="test-status text-fail">Login in Android App</h5>
+<span class='badge badge-success'>08.03.2022 19:08:31</span>
+<span class='badge badge-danger'>08.03.2022 19:08:33</span>
+<span class='badge badge-default'>1.794 secs</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node"><span class="badge log fail-bg mr-2">Fail</span>Login into Homepage-scn_id:s6</div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node"><span class="badge log fail-bg mr-2">Fail</span>Login into Homepage-scn_id:s6</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given launch the app and check login page is displayed:"Android"</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:585)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:224)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:164)
+	at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:79)
+	at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:87)
+	at com.example.demo.App.AppiumSetUp.initalizeDriver(AppiumSetUp.java:35)
+	at com.example.demo.App.AppStepDefs.launchTheAppAndCheckLoginPageIsDisplayed(AppStepDefs.java:39)
+	at ✽.launch the app and check login page is displayed:"Android"(file:///Users/sadhishkumar.thiagarajan/IdeaProjects/Api/src/test/resources/features/Login_SauceLabs_AndroidApp.feature:5)
+Caused by: org.openqa.selenium.WebDriverException: Connection refused
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'FVFH83HDQ05N', ip: '2401:4900:1ce1:730b:d79:fda6:dec2:5da0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.4', java.version: '11.0.12'
+Driver info: driver.version: AppiumDriver
+	at io.appium.java_client.remote.AppiumCommandExecutor.lambda$execute$4(AppiumCommandExecutor.java:192)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:191)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at io.appium.java_client.AppiumDriver.startSession(AppiumDriver.java:224)
+	at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:164)
+	at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:79)
+	at io.appium.java_client.AppiumDriver.<init>(AppiumDriver.java:87)
+	at com.example.demo.App.AppiumSetUp.initalizeDriver(AppiumSetUp.java:35)
+	at com.example.demo.App.AppStepDefs.launchTheAppAndCheckLoginPageIsDisplayed(AppStepDefs.java:39)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:85)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:57)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:84)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:75)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:132)
+	at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:129)
+	at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:129)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+	at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Connection refused
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:337)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	... 1 more
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When user enters login credentials</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then Homepage should be displayed in app</span>
+      <div>Step skipped
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="status-avatar pass-bg">
+            <i class="fa fa-check text-white"></i>
+          </div>
+          <div class="test-detail">
+            <span class="meta text-white badge badge-sm"></span>
+            <p class="name">Check Internet Web page</p>
+            <p class="text-sm"><span>19:08:31 PM</span> / <span>10.48 secs</span></p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<div class='float-right'><span class='badge badge-default'>#test-id=4</span></div>
+<h5 class="test-status text-pass">Check Internet Web page</h5>
+<span class='badge badge-success'>08.03.2022 19:08:31</span>
+<span class='badge badge-danger'>08.03.2022 19:08:42</span>
+<span class='badge badge-default'>10.48 secs</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node"><span class="badge log pass-bg mr-2">Pass</span>Check Internet Web page and running-scn_id:s7</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="com.example.demo.UI.UIStepdefs.navigateToLoginpage()">
+                <span>Given navigate to loginpage</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="com.example.demo.UI.UIStepdefs.homepageShouldBeDisplayedWithTitle()">
+                <span>And Homepage should be displayed with title</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
           author=""
           tag=""
           device="">
@@ -266,17 +453,17 @@ eventsCount: 5,
           <div class="test-detail">
             <span class="meta text-white badge badge-sm"></span>
             <p class="name">Create User ID</p>
-            <p class="text-sm"><span>16:16:11 PM</span> / <span>9.205 secs</span></p>
+            <p class="text-sm"><span>19:08:31 PM</span> / <span>4.982 secs</span></p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=1</span></div>
+<div class='float-right'><span class='badge badge-default'>#test-id=6</span></div>
 <h5 class="test-status text-pass">Create User ID</h5>
-<span class='badge badge-success'>08.03.2022 16:16:11</span>
-<span class='badge badge-danger'>08.03.2022 16:16:20</span>
-<span class='badge badge-default'>9.205 secs</span>
+<span class='badge badge-success'>08.03.2022 19:08:31</span>
+<span class='badge badge-danger'>08.03.2022 19:08:36</span>
+<span class='badge badge-default'>4.982 secs</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
 </div>
@@ -321,57 +508,7 @@ eventsCount: 5,
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="3"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">Check Internet Web page</p>
-            <p class="text-sm"><span>16:16:11 PM</span> / <span>15.583 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=3</span></div>
-<h5 class="test-status text-pass">Check Internet Web page</h5>
-<span class='badge badge-success'>08.03.2022 16:16:11</span>
-<span class='badge badge-danger'>08.03.2022 16:16:27</span>
-<span class='badge badge-default'>15.583 secs</span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node"><span class="badge log pass-bg mr-2">Pass</span>Check Internet Web page and running-scn_id:s7</div>
-      </div>
-    </div>
-        <div class="collapse">
-          <div class="card-body">
-              <div class="step pass-bg" title="com.example.demo.UI.UIStepdefs.navigateToLoginpage()">
-                <span>Given navigate to loginpage</span>
-      <div>
-      </div>
-              </div>
-              <div class="step pass-bg" title="com.example.demo.UI.UIStepdefs.homepageShouldBeDisplayedWithTitle()">
-                <span>And Homepage should be displayed with title</span>
-      <div>
-      </div>
-              </div>
-          </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="5"
+        <li class="test-item"  status="pass" test-id="8"
           author=""
           tag=""
           device="">
@@ -381,17 +518,17 @@ eventsCount: 5,
           <div class="test-detail">
             <span class="meta text-white badge badge-sm"></span>
             <p class="name">Login</p>
-            <p class="text-sm"><span>16:16:11 PM</span> / <span>27.348 secs</span></p>
+            <p class="text-sm"><span>19:08:31 PM</span> / <span>19.767 secs</span></p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=5</span></div>
+<div class='float-right'><span class='badge badge-default'>#test-id=8</span></div>
 <h5 class="test-status text-pass">Login</h5>
-<span class='badge badge-success'>08.03.2022 16:16:11</span>
-<span class='badge badge-danger'>08.03.2022 16:16:39</span>
-<span class='badge badge-default'>27.348 secs</span>
+<span class='badge badge-success'>08.03.2022 19:08:31</span>
+<span class='badge badge-danger'>08.03.2022 19:08:51</span>
+<span class='badge badge-default'>19.767 secs</span>
 </div>
 <div class="m-t-10 m-l-5"></div>
 </div>
@@ -457,94 +594,6 @@ eventsCount: 5,
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="7"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar fail-bg">
-            <i class="fa fa-times text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">Login in Android App</p>
-            <p class="text-sm"><span>16:16:11 PM</span> / <span>18.638 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=7</span></div>
-<h5 class="test-status text-fail">Login in Android App</h5>
-<span class='badge badge-success'>08.03.2022 16:16:11</span>
-<span class='badge badge-danger'>08.03.2022 16:16:30</span>
-<span class='badge badge-default'>18.638 secs</span>
-</div>
-<div class="m-t-10 m-l-5"></div>
-</div>
-</div>
-<div class="accordion mt-4">
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node"><span class="badge log fail-bg mr-2">Fail</span>Login into Homepage-scn_id:s6</div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node"><span class="badge log fail-bg mr-2">Fail</span>Login into Homepage-scn_id:s6</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given launch the app and check login page is displayed:"Android"</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>When user enters login credentials</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
-For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'FVFH83HDQ05N', ip: '2401:4900:1ce1:730b:80b6:5ff:65da:87a0%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.4', java.version: '11.0.12'
-Driver info: io.appium.java_client.AppiumDriver
-Command: [101090ad-f4b6-4d52-ba32-d5c1b1c4846e, findElement {using=xpath, value=//android.widget.EditText[@content-desc="test-Username"]}]
-Capabilities {appium:app: /Users/sadhishkumar.thiagar..., appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/sadhishkumar.thiagar..., appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UiAutomator2, deviceName: pixel, platformName: android, udid: emulator-5554}, appium:deviceApiLevel: 32, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 12, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 2230, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: android}
-Session ID: 101090ad-f4b6-4d52-ba32-d5c1b1c4846e
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:180)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
-	at com.example.demo.App.AppStepDefs.userEntersLoginCredentials(AppStepDefs.java:47)
-	at ✽.user enters login credentials(file:///Users/sadhishkumar.thiagarajan/IdeaProjects/Api/src/test/resources/features/Login_SauceLabs_AndroidApp.feature:6)
-</textarea>
-      
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then Homepage should be displayed in app</span>
-      <div>Step skipped
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-</div>
-          </div>
-        </li>
       </ul>
     </div>
   </div>
@@ -567,12 +616,12 @@ Session ID: 101090ad-f4b6-4d52-ba32-d5c1b1c4846e
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@login</p>
+<p class="name">@internetpage</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@login</h4>
+<h4>@internetpage</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -586,9 +635,97 @@ Session ID: 101090ad-f4b6-4d52-ba32-d5c1b1c4846e
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>16:16:11 PM</td>
+<td>19:08:31 PM</td>
 <td>
-<a href="#" class="linked" test-id='5' id='10'>Login into Homepage-scn_id:s5</a>
+<a href="#" class="linked" test-id='4' id='5'>Check Internet Web page and running-scn_id:s7</a>
+<div class="">
+<span class="badge badge-default">Check Internet Web page.Check Internet Web page and running-scn_id:s7</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">@SANITY</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@SANITY</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>19:08:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Login into Homepage-scn_id:s6</a>
+<div class="">
+<span class="badge badge-default">Login in Android App.Login into Homepage-scn_id:s6</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>19:08:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Login into Homepage-scn_id:s6</a>
+<div class="">
+<span class="badge badge-default">Login in Android App.Login into Homepage-scn_id:s6</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:08:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='4' id='5'>Check Internet Web page and running-scn_id:s7</a>
+<div class="">
+<span class="badge badge-default">Check Internet Web page.Check Internet Web page and running-scn_id:s7</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:08:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='7'>Successful creation of UserId-scn_id:s2</a>
+<div class="">
+<span class="badge badge-default">Create User ID.Successful creation of UserId-scn_id:s2</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:08:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='9'>Login into Homepage and check products -scn_id:s5</a>
+<div class="">
+<span class="badge badge-default">Login.Login into Homepage and check products -scn_id:s5</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>19:08:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='10'>Login into Homepage-scn_id:s5</a>
 <div class="">
 <span class="badge badge-default">Login.Login into Homepage-scn_id:s5</span>
 </div>
@@ -622,9 +759,9 @@ Session ID: 101090ad-f4b6-4d52-ba32-d5c1b1c4846e
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>16:16:11 PM</td>
+<td>19:08:31 PM</td>
 <td>
-<a href="#" class="linked" test-id='7' id='8'>Login into Homepage-scn_id:s6</a>
+<a href="#" class="linked" test-id='1' id='2'>Login into Homepage-scn_id:s6</a>
 <div class="">
 <span class="badge badge-default">Login in Android App.Login into Homepage-scn_id:s6</span>
 </div>
@@ -632,99 +769,11 @@ Session ID: 101090ad-f4b6-4d52-ba32-d5c1b1c4846e
 </tr>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>16:16:11 PM</td>
+<td>19:08:31 PM</td>
 <td>
-<a href="#" class="linked" test-id='7' id='9'>Login into Homepage-scn_id:s6</a>
+<a href="#" class="linked" test-id='1' id='3'>Login into Homepage-scn_id:s6</a>
 <div class="">
 <span class="badge badge-default">Login in Android App.Login into Homepage-scn_id:s6</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>4</span>
-<span class='badge log badge-danger'>2</span>
-</span>
-<p class="name">@SANITY</p>
-<p class="duration text-sm">6 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@SANITY</h4>
-<span status="pass" class='badge log pass-bg'>4 passed</span>
-<span status="fail" class='badge log badge-danger'>2 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:16:11 PM</td>
-<td>
-<a href="#" class="linked" test-id='1' id='2'>Successful creation of UserId-scn_id:s2</a>
-<div class="">
-<span class="badge badge-default">Create User ID.Successful creation of UserId-scn_id:s2</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:16:11 PM</td>
-<td>
-<a href="#" class="linked" test-id='3' id='4'>Check Internet Web page and running-scn_id:s7</a>
-<div class="">
-<span class="badge badge-default">Check Internet Web page.Check Internet Web page and running-scn_id:s7</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:16:11 PM</td>
-<td>
-<a href="#" class="linked" test-id='5' id='6'>Login into Homepage and check products -scn_id:s5</a>
-<div class="">
-<span class="badge badge-default">Login.Login into Homepage and check products -scn_id:s5</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>16:16:11 PM</td>
-<td>
-<a href="#" class="linked" test-id='7' id='8'>Login into Homepage-scn_id:s6</a>
-<div class="">
-<span class="badge badge-default">Login in Android App.Login into Homepage-scn_id:s6</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>16:16:11 PM</td>
-<td>
-<a href="#" class="linked" test-id='7' id='9'>Login into Homepage-scn_id:s6</a>
-<div class="">
-<span class="badge badge-default">Login in Android App.Login into Homepage-scn_id:s6</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:16:11 PM</td>
-<td>
-<a href="#" class="linked" test-id='5' id='10'>Login into Homepage-scn_id:s5</a>
-<div class="">
-<span class="badge badge-default">Login.Login into Homepage-scn_id:s5</span>
 </div>
 </td>
 </tr>
@@ -756,9 +805,9 @@ Session ID: 101090ad-f4b6-4d52-ba32-d5c1b1c4846e
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>16:16:11 PM</td>
+<td>19:08:31 PM</td>
 <td>
-<a href="#" class="linked" test-id='5' id='6'>Login into Homepage and check products -scn_id:s5</a>
+<a href="#" class="linked" test-id='8' id='9'>Login into Homepage and check products -scn_id:s5</a>
 <div class="">
 <span class="badge badge-default">Login.Login into Homepage and check products -scn_id:s5</span>
 </div>
@@ -773,12 +822,12 @@ Session ID: 101090ad-f4b6-4d52-ba32-d5c1b1c4846e
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@internetpage</p>
+<p class="name">@login</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@internetpage</h4>
+<h4>@login</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -792,11 +841,11 @@ Session ID: 101090ad-f4b6-4d52-ba32-d5c1b1c4846e
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>16:16:11 PM</td>
+<td>19:08:31 PM</td>
 <td>
-<a href="#" class="linked" test-id='3' id='4'>Check Internet Web page and running-scn_id:s7</a>
+<a href="#" class="linked" test-id='8' id='10'>Login into Homepage-scn_id:s5</a>
 <div class="">
-<span class="badge badge-default">Check Internet Web page.Check Internet Web page and running-scn_id:s7</span>
+<span class="badge badge-default">Login.Login into Homepage-scn_id:s5</span>
 </div>
 </td>
 </tr>
@@ -844,13 +893,13 @@ Session ID: 101090ad-f4b6-4d52-ba32-d5c1b1c4846e
 <li class="test-item">
 <div class="open-test">
 <div class="test-detail">
-<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="name">org.openqa.selenium.SessionNotCreatedException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>org.openqa.selenium.NoSuchElementException</h4>
+<h4>org.openqa.selenium.SessionNotCreatedException</h4>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -863,9 +912,9 @@ Session ID: 101090ad-f4b6-4d52-ba32-d5c1b1c4846e
 <tbody>
 <tr>
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>16:16:26 PM</td>
+<td>19:08:32 PM</td>
 <td>
-<a href="#" class="linked" test-id='7' id='45'>When user enters login credentials</a>
+<a href="#" class="linked" test-id='1' id='31'>Given launch the app and check login page is displayed:"Android"</a>
 <div class="">
 <span class="badge badge-default">Login into Homepage-scn_id:s6</span>
 </div>
