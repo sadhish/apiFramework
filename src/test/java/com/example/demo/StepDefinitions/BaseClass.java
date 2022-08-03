@@ -92,7 +92,7 @@ public class BaseClass {
 return null;
 
 }
-
+//launch browser
     public static  WebDriver launchBrowser(String browser) {
         if(browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "/Users/sadhishkumar.thiagarajan/Downloads/chromedriver");
