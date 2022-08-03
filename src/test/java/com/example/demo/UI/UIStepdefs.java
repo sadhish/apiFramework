@@ -27,7 +27,7 @@ public class UIStepdefs extends BaseClass {
     @Before
     public void setTestData(){
 
-        testData=getUITestData(hooks.featureName, hooks.scenarioName);
+        testData=getUITestData(hooks.featureName, hooks.scenarioName); //getsTestData
     }
 
     @Given("navigate to loginpage")
