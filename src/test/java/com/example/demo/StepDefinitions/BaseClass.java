@@ -99,6 +99,7 @@ return null;
             DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
             desiredCapabilities.setBrowserName("chromess");
             driver = new ChromeDriver();
+
             threadLocal.set(driver);
         }
         else if(browser.equalsIgnoreCase("firefox")){

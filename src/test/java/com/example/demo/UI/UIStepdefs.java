@@ -10,7 +10,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.SneakyThrows;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ public class UIStepdefs extends BaseClass {
     public void navigateToLoginpage() {
      launchBrowser("chrome");
      threadLocal.get().get(testData.get("url"));
-     driver.manage().window().maximize();
+     threadLocal.get().manage().window().maximize();
     }
 
 
@@ -84,7 +83,6 @@ public class UIStepdefs extends BaseClass {
     Assert.assertEquals( expectedTitle,"Welcome to the-internet");
 
     }
-
 
     @After(order=0)
     public void tearDown() {

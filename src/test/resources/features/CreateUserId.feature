@@ -10,7 +10,7 @@ Feature: Create User ID
     When post method is called
     Then response code should be 201
 
-  @Smoke
+  @Smo
    Scenario Outline: Title of your scenario outline-scn_id:s1
     Given I want to write a step with :"<name>"
     When I check for the "<value>" in step

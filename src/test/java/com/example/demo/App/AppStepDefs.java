@@ -1,12 +1,9 @@
 package com.example.demo.App;
 
-import com.example.demo.AppiumSetUp;
 import com.example.demo.Hooks;
 import com.example.demo.StepDefinitions.BaseClass;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -15,14 +12,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.SneakyThrows;
 import org.openqa.selenium.By;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
-import java.io.File;
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.time.Duration;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
