@@ -11,12 +11,13 @@ import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.springframework.stereotype.Component;
+
 import org.springframework.util.ResourceUtils;
 
 import java.io.ByteArrayInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 
 public class Hooks extends BaseClass {
     public  String scenarioName="";
@@ -58,6 +59,7 @@ public void launchApp(){
 //            scenario.log("Screenshot attached");
 //
 //    }
+
 
 
 }

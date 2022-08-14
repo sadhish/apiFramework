@@ -1,4 +1,4 @@
-Feature: Login in Android App
+Feature: Login in Swag Labs Android App-APP
 
 @app @SANITY
   Scenario Outline: Login into Homepage-scn_id:s6

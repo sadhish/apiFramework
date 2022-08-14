@@ -12,12 +12,16 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import lombok.SneakyThrows;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.testng.Assert;
 
 import java.net.MalformedURLException;
+import java.time.Duration;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
 
 public class AppStepDefs extends BaseClass {
     Map<String,String> testData=new LinkedHashMap<>();
@@ -28,7 +32,7 @@ public class AppStepDefs extends BaseClass {
     private Hooks hooks;
     @Autowired
     private AppiumSetUp appiumSetUp;
-    @Before()
+    @Before
     public void setAppTestData(){
 
         testData=getMobileAppTestData(hooks.featureName, hooks.scenarioName);
@@ -44,17 +48,23 @@ public class AppStepDefs extends BaseClass {
     @SneakyThrows
     @When("user enters login credentials")
     public void userEntersLoginCredentials() {
-        driverThreadLocal.get().findElement(By.xpath("//android.widget.EditText[@content-desc=\"test-Username\"]")).sendKeys(testData.get("username"));
-       driverThreadLocal.get().findElement(By.xpath("//android.widget.EditText[@content-desc=\"test-Password\"]")).sendKeys(testData.get("password"));
-       driverThreadLocal.get().findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"test-LOGIN\"]")).click();
+        WebDriverWait webDriverWait=new WebDriverWait(driverThreadLocal.get(), Duration.ofSeconds(3000));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@content-desc=\"test-Username\"]"))).sendKeys(testData.get("username"));
+        //driverThreadLocal.get().findElement(By.xpath("//android.widget.EditText[@content-desc=\"test-Username\"]")).sendKeys(testData.get("username"));
+        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//android.widget.EditText[@content-desc=\"test-Password\"]"))).sendKeys(testData.get("password"));
+
+
         Thread.sleep(5000);
+       driverThreadLocal.get().findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"test-LOGIN\"]")).click();
+
 
     }
 @SneakyThrows
     @Then("Homepage should be displayed in app")
     public void homepageShouldBeDisplayedInApp() {
+    Thread.sleep(5000);
         driverThreadLocal.get().findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"test-Cart\"]/preceding-sibling::android.view.ViewGroup")).click();
-        Thread.sleep(5000);
+
         boolean b = driver.findElement(By.xpath("//android.view.ViewGroup[@content-desc=\"test-ALL ITEMS\"]")).isDisplayed() ? true : false;
         System.out.println("hello" + b);
         Assert.assertEquals(b,true);
@@ -68,6 +78,7 @@ public class AppStepDefs extends BaseClass {
         driver=  appiumSetUp.initalizeDriver(platformName,testData.get("appPackage"),
                 testData.get("appActivity"),testData.get("UDID"),testData.get("appName"));
         driverThreadLocal.set(driver);
+
     }
 @SneakyThrows
     @And("Verify Random Elements")
@@ -90,6 +101,8 @@ public class AppStepDefs extends BaseClass {
 
         if (driverThreadLocal.get() != null) {
             driverThreadLocal.get().quit();
+            appTestData.clear();
+            driverThreadLocal.remove();
         }
     }
 }

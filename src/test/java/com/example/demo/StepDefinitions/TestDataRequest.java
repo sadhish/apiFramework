@@ -10,11 +10,9 @@ import io.restassured.RestAssured;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class TestDataRequest extends BaseClass {
-
     @Autowired
     private Hooks hooks;
-
-    @Given("testdata")
+    @And("testdata")
     public void testdata() {
         DataRequest dataRequest=getTestData(hooks.featureName,hooks.scenarioName);
         JsonObject data=new JsonObject();
@@ -23,11 +21,9 @@ public class TestDataRequest extends BaseClass {
         data.addProperty("userId",dataRequest.getUserId());
         this.requestPayload=data.toString();
     }
-
-    @And("BaseURl")
+    @Given("BaseURl")
     public void baseurl() {
     RestAssured.baseURI="https://jsonplaceholder.typicode.com";
     }
-
 
 }

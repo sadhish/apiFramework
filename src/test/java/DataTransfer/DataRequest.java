@@ -9,5 +9,7 @@ public class DataRequest {
     private String title;
     private String body;
     private String userId;
+    private String baseUri;
+    private  String endPoint;
 
 }

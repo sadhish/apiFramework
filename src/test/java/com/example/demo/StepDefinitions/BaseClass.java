@@ -8,16 +8,18 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import lombok.SneakyThrows;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.ResourceUtils;
 import java.io.File;
 import java.nio.file.Files;
@@ -25,17 +27,25 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class BaseClass {
-
-    public static RequestSpecification requestSpecification;
-    public static Response response;
+    public static String userName;
+    public static String fname;
+    public static String lname;
+    public  RequestSpecification requestSpecification;
+    public  ThreadLocal<RequestSpecification> requestSpecificationThreadLocal=new ThreadLocal<>();
+    public  ThreadLocal<Response> responseThreadLocal=new ThreadLocal<>();
+    public ThreadLocal<String> endPointThreadLocal=new ThreadLocal<>();
+    public ThreadLocal<String> restAssuredBaseURIThreadLocal=new ThreadLocal<>();
+    public String endPoint;
+    public RequestSpecBuilder requestSpecBuilder=new RequestSpecBuilder();
+    public  Response response;
     public static  ThreadLocal<WebDriver> threadLocal=new ThreadLocal<>();
     public static WebDriver driver;
     public static String screenshotdir = System.getProperty("user.dir" + "//test-output//screenshots");
 
     public static ObjectMapper objectMapper = new ObjectMapper();
     public static String requestPayload;
-    Map<String, String> result = new LinkedHashMap<>();
-    LinkedHashMap<String, String> appTestData = new LinkedHashMap<>();
+    public static Map<String, String> result = new LinkedHashMap<>();
+    public static LinkedHashMap<String, String> appTestData = new LinkedHashMap<>();
     JsonParser jParser;
 
     public static String getScenarioId(String scenarioName) {
@@ -96,8 +106,7 @@ return null;
     public static  WebDriver launchBrowser(String browser) {
         if(browser.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver", "/Users/sadhishkumar.thiagarajan/Downloads/chromedriver");
-            DesiredCapabilities desiredCapabilities=new DesiredCapabilities();
-            desiredCapabilities.setBrowserName("chromess");
+
             driver = new ChromeDriver();
 
             threadLocal.set(driver);
@@ -147,6 +156,8 @@ public static String getScreenshot(){
         screenshot="data:image/png"+ Base64.getEncoder().encodeToString(fileContent);
         return screenshot;
 }
+
+
 }
 
 

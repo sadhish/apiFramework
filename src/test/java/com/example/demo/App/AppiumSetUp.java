@@ -29,6 +29,7 @@ public class AppiumSetUp {
                 desiredCapabilities.setCapability(MobileCapabilityType.UDID, UDID);
                 desiredCapabilities.setCapability("appPackage", appPackage);
                 desiredCapabilities.setCapability("appActivity", appActivity);
+                //desiredCapabilities.setCapability("autoGrantPermissions","true");
                 String appurl = System.getProperty("user.dir") + File.separator + "src" +
                         File.separator + "main" + File.separator + "resources" + File.separator + appName + ".apk";
                 desiredCapabilities.setCapability(MobileCapabilityType.APP, appurl);

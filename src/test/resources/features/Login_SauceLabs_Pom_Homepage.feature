@@ -1,13 +1,13 @@
-Feature: Login
-  @login @SANITY
-  Scenario: Login into Homepage-scn_id:s5
+Feature: Login Swag Labs-UI
+  @login @SANITY @smokk
+  Scenario: Login into Swag Labs Homepage-scn_id:s5
     Given navigate to loginpage
     When user logged in using with proper credentials
     Then Homepage should be displayed
 
 
   @products @SANITY
-  Scenario: Login into Homepage and check products -scn_id:s5
+  Scenario: Login into Swag Labs Homepage and check products page -scn_id:s5
     Given navigate to loginpage
     When user logged in using with proper credentials
     Then Homepage should be displayed

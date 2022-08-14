@@ -1,14 +1,16 @@
-Feature: Create User ID
+Feature: Create User ID-API
 
   Background:setUp
-    Given testdata
-    And BaseURl
+    #Given BaseURl
+    And testdata
 
-  @SANITY
+  @SANITY @api @check
     Scenario:Successful creation of UserId-scn_id:s2
     Given valid userid
     When post method is called
     Then response code should be 201
+    And verify user id
+
 
   @Smo
    Scenario Outline: Title of your scenario outline-scn_id:s1

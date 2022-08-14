@@ -7,15 +7,28 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
+import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.testng.Assert;
 
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class MyStepdefs extends BaseClass {
-
+    @Value("${getIdApi}")
+    public String getIdApiBaseUri;
+    @Value("${userIdApi}")
+    public String userIdApiBaseUri;
+    public ThreadLocal<String> threadLocalBaseUri=new ThreadLocal<>();
 
     @Given("valid userid:{string},{string},{string},{string}")
     public void validUserid(String url, String title, String body, String userid) {
@@ -65,17 +78,67 @@ public class MyStepdefs extends BaseClass {
 
     @Given("valid userid")
     public void validUserid() {
+        requestSpecBuilder.setBaseUri(userIdApiBaseUri).setContentType("application/json").setBody(requestPayload);
+        requestSpecification=requestSpecBuilder.build();
+        //requestSpecificationThreadLocal.set(requestSpecification);
 
-        requestSpecification=RestAssured.given().contentType("application/json").body(requestPayload);
+        //RestAssured.baseURI= threadLocalBaseUri.get();
+        //requestSpecification=RestAssured.given().contentType("application/json").body(requestPayload);
+        //requestSpecificationThreadLocal.set(requestSpecification);
+
     }
 
     @When("post method is called")
     public void postMethodIsCalled() {
-       response=requestSpecification.post("/posts");
+
+//       response=  requestSpecificationThreadLocal.get().post("/posts");
+//       responseThreadLocal.set(response);
+        response=RestAssured.given(requestSpecification).post("/posts");
     }
 
     @Then("response code should be {int}")
     public void responseCodeShouldBe(int arg0) {
+//       System.out.println( "india"+responseThreadLocal.get().getStatusCode());
+//       Assert.assertEquals(responseThreadLocal.get().getStatusCode(),201);
+        System.out.println( "india"+response.getStatusCode());
        Assert.assertEquals(response.getStatusCode(),201);
     }
+
+    @Given("api")
+    public void api() {
+//        requestSpecBuilder.setBaseUri(getIdApiBaseUri);
+//        requestSpecBuilder.setContentType("application/json");
+//        requestSpecification=requestSpecBuilder.build();
+//        requestSpecificationThreadLocal.set(requestSpecification);
+        //threadLocalBaseUri.set(getIdApiBaseUri);
+        //  RestAssured.baseURI= threadLocalBaseUri.get();
+      //  requestSpecification=RestAssured.given().contentType("application/json");
+       // requestSpecificationThreadLocal.set(requestSpecification);
+        requestSpecBuilder.setBaseUri(getIdApiBaseUri);
+        requestSpecBuilder.setContentType("application/json");
+        requestSpecification=requestSpecBuilder.build();
+    }
+
+    @When("get method is called")
+    public void getMethodIsCalled() throws InterruptedException {
+//        response=requestSpecificationThreadLocal.get().get("/api/users?page=2");
+//        responseThreadLocal.set(response);
+        response=RestAssured.given(requestSpecification).get("/api/users?page=2");
+
+    }
+
+    @Then("check response")
+    public void checkResponse() throws ExecutionException, InterruptedException {
+//       Assert.assertEquals(responseThreadLocal.get().getStatusCode(),200);
+//        System.out.println("heloo");
+        System.out.println("heloo"+response.getStatusCode());
+        Assert.assertEquals(response.getStatusCode(),200);
+//        fname=response.jsonPath().get("data.first_name[0]");
+//        lname=response.jsonPath().get("data.last_name[0]");
+    }
+    @And("verify user id")
+    public void verifyUserId() {
+    }
+
+
 }

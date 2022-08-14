@@ -5,16 +5,17 @@
     ],
     "title": "foo",
     "body": "ind",
-    "userId": "xyz"
+    "userId": "xyz",
+    "baseUri": "https://jsonplaceholder.typicode.com",
+    "endPoint": "/posts"
   },
 
   "second": {
     "scn_ids": [
       "s3"
     ],
-    "title": "foo",
-    "body": "ind",
-    "userId": "xyz"
+    "baseUri": "",
+    "endPoint": ""
   },
 
   "third": {
@@ -44,6 +45,7 @@
     "url": "http://the-internet.herokuapp.com/"
 
   },
+
   "six": {
     "scn_ids": [
       "s8"
@@ -52,5 +54,21 @@
     "appPackage":"io.appium.android.apis",
     "appActivity": "io.appium.android.apis.ApiDemos",
     "UDID":"emulator-5556"
+  },
+
+  "seven": {
+    "scn_ids": [
+      "s9"
+    ],
+   "url": "https://www.seleniumeasy.com/"
+  },
+
+  "eight": {
+    "scn_ids": [
+      "s10"
+    ],
+    "url": "https://practicetestautomation.com/practice-test-login/",
+    "username": "student",
+    "password": "Password123"
   }
 }
