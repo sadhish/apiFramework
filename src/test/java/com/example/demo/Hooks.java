@@ -58,7 +58,7 @@ public void launchApp(){
         }
         if(driverThreadLocal.get()!=null){
             if(scenario.isFailed()){
-                Allure.addAttachment("Mobile screenshot", new ByteArrayInputStream(((TakesScreenshot) threadLocal.get()).
+                Allure.addAttachment("Mobile screenshot", new ByteArrayInputStream(((TakesScreenshot) driverThreadLocal.get()).
                         getScreenshotAs(OutputType.BYTES)));
             }
         }
