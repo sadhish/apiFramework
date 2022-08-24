@@ -6,3 +6,10 @@ Feature:Launch ApiDemos
     Examples:
     |platform|
     |Android |
+
+  Scenario Outline: Launch ApiDemo and Verify App-scn_id:s8
+    Given Launchapp:"<platform>"
+    And Verify Random Elements
+    Examples:
+      |platform|
+      |Android |

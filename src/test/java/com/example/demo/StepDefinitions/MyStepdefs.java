@@ -1,29 +1,23 @@
 package com.example.demo.StepDefinitions;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ser.Serializers;
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
-import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.testng.Assert;
+import org.testng.ITestContext;
 
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.concurrent.Callable;
+
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+
 
 public class MyStepdefs extends BaseClass {
+
     @Value("${getIdApi}")
     public String getIdApiBaseUri;
     @Value("${userIdApi}")
@@ -97,7 +91,7 @@ public class MyStepdefs extends BaseClass {
     }
 
     @Then("response code should be {int}")
-    public void responseCodeShouldBe(int arg0) {
+    public void responseCodeShouldBe(int arg0){
 //       System.out.println( "india"+responseThreadLocal.get().getStatusCode());
 //       Assert.assertEquals(responseThreadLocal.get().getStatusCode(),201);
         System.out.println( "india"+response.getStatusCode());
@@ -131,7 +125,7 @@ public class MyStepdefs extends BaseClass {
     public void checkResponse() throws ExecutionException, InterruptedException {
 //       Assert.assertEquals(responseThreadLocal.get().getStatusCode(),200);
 //        System.out.println("heloo");
-        System.out.println("heloo"+response.getStatusCode());
+        System.out.println("heloo"+response.prettyPrint());
         Assert.assertEquals(response.getStatusCode(),200);
 //        fname=response.jsonPath().get("data.first_name[0]");
 //        lname=response.jsonPath().get("data.last_name[0]");

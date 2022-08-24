@@ -18,12 +18,11 @@ public class AppiumSetUp {
 
     @SneakyThrows
     public AppiumDriver initalizeDriver(String platformName, String appPackage,
-                                        String appActivity, String UDID,String appName) {
+                                        String appActivity, String UDID, String appName) {
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platformName);
         URL url = new URL(appiumUrl);
-        switch (platformName) {
-            case "Android":
+
                 desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
                 desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "pixel");
                 desiredCapabilities.setCapability(MobileCapabilityType.UDID, UDID);
@@ -35,22 +34,23 @@ public class AppiumSetUp {
                 desiredCapabilities.setCapability(MobileCapabilityType.APP, appurl);
                 return new AppiumDriver(url, desiredCapabilities);
 
+    }
 
-            case "IOS":
-                desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone 8");
-                desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
-                desiredCapabilities.setCapability(MobileCapabilityType.UDID, "090F78D0-114C-4975-8354-044067F12EF7");
-                desiredCapabilities.setCapability("simulatorStartupTimeout", 180000);
-                String appUrlIos = System.getProperty("user.dir") + File.separator + "src" +
-                        File.separator + "main" + File.separator + "resources" + File.separator + appName + ".apk";
+    @SneakyThrows
+    public AppiumDriver iosInitalizeDriver(String platformName, String UDID, String appName) {
+        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+        desiredCapabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, platformName);
+        URL url = new URL(appiumUrl);
+        desiredCapabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone SE");
+        desiredCapabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "XCUITest");
+        desiredCapabilities.setCapability(MobileCapabilityType.UDID, UDID);
+        desiredCapabilities.setCapability("simulatorStartupTimeout", 180000);
+//        String appUrlIos = System.getProperty("user.dir") + File.separator + "src" +
+//                File.separator + "main" + File.separator + "resources" + File.separator +"UIKitCatalog-iphonesimulator.app";
+        String appUrlIos = System.getProperty("user.dir") + File.separator + "src" +
+                File.separator + "main" + File.separator + "resources" + File.separator + appName + ".app";
+        desiredCapabilities.setCapability(MobileCapabilityType.APP, appUrlIos);
 
-                desiredCapabilities.setCapability(MobileCapabilityType.APP, appUrlIos);
-
-                return new IOSDriver(url, desiredCapabilities);
-            default:
-                throw new Exception("no platform found");
-
-
-        }
+        return new IOSDriver(url, desiredCapabilities);
     }
 }

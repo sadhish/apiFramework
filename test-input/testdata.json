@@ -36,7 +36,10 @@
     "password": "secret_sauce",
     "swagLabsAppPackage":"com.swaglabsmobileapp",
     "swagLabsAppActivity": "com.swaglabsmobileapp.MainActivity",
-    "UDID":"emulator-5554"
+    "UDID":"emulator-5554",
+    "IOSUDID": "D00D72BC-586B-48E2-BAFA-3749BCAD357C",
+    "iosAppName": "swaglabs"
+
   },
   "five": {
     "scn_ids": [

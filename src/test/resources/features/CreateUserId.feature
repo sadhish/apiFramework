@@ -2,9 +2,9 @@ Feature: Create User ID-API
 
   Background:setUp
     #Given BaseURl
-    And testdata
+    Given testdata
 
-  @SANITY @api @check
+  @SANITY @api1 @check
     Scenario:Successful creation of UserId-scn_id:s2
     Given valid userid
     When post method is called

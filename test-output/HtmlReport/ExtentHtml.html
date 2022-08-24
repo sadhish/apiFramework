@@ -40,6 +40,7 @@
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 			<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
 			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
 		<!-- report name -->
@@ -49,7 +50,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Aug 14, 2022 11:29:31 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Aug 24, 2022 11:43:26 AM</span>
 			</a>
 		</ul>
 	</div>
@@ -65,6 +66,7 @@
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
 										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -76,17 +78,18 @@
 				<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>@smokk</a></li>
 					<li><a href='#'>@check</a></li>
-					<li><a href='#'>@practicehome</a></li>
 					<li><a href='#'>@SANITY</a></li>
-					<li><a href='#'>@api</a></li>
-					<li><a href='#'>@login</a></li>
 					<li><a href='#'>@practice</a></li>
-					<li><a href='#'>@app1</a></li>
-					<li><a href='#'>@products</a></li>
-					<li><a href='#'>@seleniumeasy</a></li>
+					<li><a href='#'>@api1</a></li>
+					<li><a href='#'>@practicehome</a></li>
 					<li><a href='#'>@app</a></li>
+					<li><a href='#'>@products</a></li>
+					<li><a href='#'>@app1</a></li>
+					<li><a href='#'>@api</a></li>
+					<li><a href='#'>@seleniumeasy</a></li>
+					<li><a href='#'>@smokk</a></li>
+					<li><a href='#'>@login</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
@@ -128,12 +131,12 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='$100%'>
-                    <span class='strong'>7</span> features passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='$85%'>
+                    <span class='strong'>6</span> features passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> features failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='14%'>
+                    1</span> features failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped
                 </div>
@@ -146,12 +149,12 @@
                     <canvas id='child-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
+                    <span class='tooltipped' data-position='top' data-tooltip='90%'>
                     <span class='strong'>9</span> scenarios passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> scenarios failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='10%'>
+                    1</span> scenarios failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -166,12 +169,12 @@
                     <canvas id='grandchild-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='100%'>
-                    <span class='strong'>29</span> steps passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='96%'>
+                    <span class='strong'>31</span> steps passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
-                    0</span> steps failed, 
+                    <span class='strong tooltipped' data-position='top' data-tooltip='3%'>
+                    1</span> steps failed, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
                     0</span> skipped, 
                     <span class='strong tooltipped' data-position='top' data-tooltip='0%'>
@@ -194,11 +197,11 @@
 	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='1'>
+				<li class='test displayed active has-leaf fail' status='fail' bdd='true' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>Login Swag Labs-UI</span>
-						<span class='test-time'>Aug 14, 2022 11:29:37 PM</span>
-						<span class='test-status right pass'>Pass</span>
+						<span class='test-name'>Login in Swag Labs Android App-APP</span>
+						<span class='test-time'>Aug 24, 2022 11:43:34 AM</span>
+						<span class='test-status right fail'>Fail</span>
 					</div>
 					<div class='test-content hide'>
 <div class="sr-filters bdd-filters">
@@ -208,310 +211,100 @@
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
 
-<div class='scenario node' test-id='2' status='pass'>
+<div class='scenario outline node' test-id='2' status='fail'>
 
-	<span class='duration right label'>00 00 52.909</span>
+	<span class='duration right label'>00 00 52.183</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Login into Swag Labs Homepage-scn_id:s5</div>
+		<div class="scenario-name"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span> Scenario Outline: Login into Homepage-scn_id:s6</div>
 	</div>
 	
+		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>platform</td></tr><tr><td>Android</td></tr><tr><td>ios</td></tr></table><br><br><table class='markup-table table '><tr><td>platform</td></tr><tr><td>Android</td></tr><tr><td>ios</td></tr></table></div>
 	
 		<div class='category-list'>
 				<span class='category label'>@SANITY</span>
-				<span class='category label'>@login</span>
-				<span class='category label'>@smokk</span>
+				<span class='category label'>@app</span>
 		</div>
 	
 	<ul class='steps'>
-		<li test-id='53' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.navigateToLoginpage())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to loginpage</div>
+		<li test-id='3' class='node scenario Pass' status='Pass'>
+			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Login into Homepage-scn_id:s6</div>
 
+				<div class='category-list'>
+						<span class='category label'>@SANITY</span>
+						<span class='category label'>@app</span>
+				</div>
 
+			<ul class='gc steps'>
+				<li test-id='62' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.launchTheAppAndCheckLoginPageIsDisplayed(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given launch the app and check login page is displayed:"ios"</h6>
+
+				</li>
+				<li test-id='93' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.userEntersLoginCredentials(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user enters login credentials:"ios"</h6>
+
+				</li>
+				<li test-id='99' class='gc then Pass' status='Pass'>
+					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.homepageShouldBeDisplayedInApp(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Homepage should be displayed in app:"ios"</h6>
+
+				</li>
+			</ul>
 		</li>
-		<li test-id='86' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.userLoggedInUsingWithProperCredentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user logged in using with proper credentials</div>
+		<li test-id='20' class='node scenario Fail' status='Fail'>
+			<div class="step-name" title="()"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Login into Homepage-scn_id:s6</div>
 
+				<div class='category-list'>
+						<span class='category label'>@SANITY</span>
+						<span class='category label'>@app</span>
+				</div>
 
-		</li>
-		<li test-id='107' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.homepageShouldBeDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Homepage should be displayed</div>
+			<ul class='gc steps'>
+				<li test-id='61' class='gc given Pass' status='Pass'>
+					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.launchTheAppAndCheckLoginPageIsDisplayed(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given launch the app and check login page is displayed:"Android"</h6>
 
+				</li>
+				<li test-id='82' class='gc when Pass' status='Pass'>
+					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.userEntersLoginCredentials(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user enters login credentials:"Android"</h6>
 
-		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='11' status='pass'>
+				</li>
+				<li test-id='92' class='gc then Fail' status='Fail'>
+					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.homepageShouldBeDisplayedInApp(java.lang.String)"><span class='status fail' title='Fail'><i class='material-icons'>cancel</i></span>Then Homepage should be displayed in app:"Android"</h6>
 
-	<span class='duration right label'>00 00 52.419</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Login into Swag Labs Homepage and check products page -scn_id:s5</div>
-	</div>
-	
-	
-		<div class='category-list'>
-				<span class='category label'>@SANITY</span>
-				<span class='category label'>@products</span>
-		</div>
-	
-	<ul class='steps'>
-		<li test-id='61' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.navigateToLoginpage())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to loginpage</div>
-
-
-		</li>
-		<li test-id='85' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.userLoggedInUsingWithProperCredentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user logged in using with proper credentials</div>
-
-
-		</li>
-		<li test-id='102' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.homepageShouldBeDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Homepage should be displayed</div>
-
-
-		</li>
-		<li test-id='103' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.verifyProductsIsDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And verify products is displayed</div>
-
-
+							<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'FVFH83HDQ05N', ip: '2401:4900:1ce0:18a5:e0bc:d540:f4de:25ef%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.4', java.version: '11.0.12'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [6d5cc09b-4ac3-43c2-bd7b-76cb3d1b94a9, findElement {using=xpath, value=//android.view.ViewGroup[@content-desc="test-ALL ITEMS"]}]
+Capabilities {appium:app: /Users/sadhishkumar.thiagar..., appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/sadhishkumar.thiagar..., appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UiAutomator2, deviceName: pixel, platformName: android, udid: emulator-5554}, appium:deviceApiLevel: 32, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 12, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 2230, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: android}
+Session ID: 6d5cc09b-4ac3-43c2-bd7b-76cb3d1b94a9
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:180)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at com.example.demo.App.AppStepDefs.homepageShouldBeDisplayedInApp(AppStepDefs.java:160)
+	at ✽.Homepage should be displayed in app:"Android"(file:///Users/sadhishkumar.thiagarajan/IdeaProjects/Api/src/test/resources/features/Login_SauceLabs_AndroidApp.feature:8)
+</textarea>
+				</li>
+			</ul>
 		</li>
 	</ul>
 </div>
 					</div>
 				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='3'>
-					<div class='test-heading'>
-						<span class='test-name'>Validate SeleniumEasy Webpage-UI</span>
-						<span class='test-time'>Aug 14, 2022 11:29:37 PM</span>
-						<span class='test-status right pass'>Pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-
-<div class='scenario node' test-id='4' status='pass'>
-
-	<span class='duration right label'>00 00 34.069</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: LauchHomePage-scn_id:s9</div>
-	</div>
-	
-	
-		<div class='category-list'>
-				<span class='category label'>@SANITY</span>
-				<span class='category label'>@seleniumeasy</span>
-		</div>
-	
-	<ul class='steps'>
-		<li test-id='57' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.verifyWebpageTitle())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given Verify Webpage title</div>
-
-
-		</li>
-		<li test-id='79' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.verifyHomepageIsDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Verify Homepage is displayed</div>
-
-
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='5'>
-					<div class='test-heading'>
-						<span class='test-name'>GetID-API</span>
-						<span class='test-time'>Aug 14, 2022 11:29:37 PM</span>
-						<span class='test-status right pass'>Pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-
-<div class='scenario node' test-id='6' status='pass'>
-
-	<span class='duration right label'>00 00 19.002</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Get id-scn_id:s3</div>
-	</div>
-	
-	
-		<div class='category-list'>
-				<span class='category label'>@SANITY</span>
-				<span class='category label'>@api</span>
-		</div>
-	
-	<ul class='steps'>
-		<li test-id='56' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.api())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given api</div>
-
-
-		</li>
-		<li test-id='66' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.getMethodIsCalled())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When get method is called</div>
-
-
-		</li>
-		<li test-id='68' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.checkResponse())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then check response</div>
-
-
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='7'>
-					<div class='test-heading'>
-						<span class='test-name'>Practice Automation Webpage-UI</span>
-						<span class='test-time'>Aug 14, 2022 11:29:37 PM</span>
-						<span class='test-status right pass'>Pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-
-<div class='scenario node' test-id='8' status='pass'>
-
-	<span class='duration right label'>00 00 42.048</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Login and check homepage-scn_id:s10</div>
-	</div>
-	
-	
-		<div class='category-list'>
-				<span class='category label'>@SANITY</span>
-				<span class='category label'>@practice</span>
-		</div>
-	
-	<ul class='steps'>
-		<li test-id='63' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.navigateToLoginpage())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to loginpage</div>
-
-
-		</li>
-		<li test-id='81' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.enterPracticeWebpageLoginCredentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And enter practice webpage login credentials</div>
-
-
-		</li>
-		<li test-id='92' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.verifyPracticeAutomationHomepageIsDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then verify practice automation homepage is displayed</div>
-
-
-		</li>
-	</ul>
-</div>
-<div class='scenario node' test-id='10' status='pass'>
-
-	<span class='duration right label'>00 00 43.006</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Navigate to homepage and logout-scn_id:s10</div>
-	</div>
-	
-	
-		<div class='category-list'>
-				<span class='category label'>@SANITY</span>
-				<span class='category label'>@practicehome</span>
-		</div>
-	
-	<ul class='steps'>
-		<li test-id='62' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.navigateToLoginpage())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to loginpage</div>
-
-
-		</li>
-		<li test-id='80' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.clickOnHomeLink())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And click on home link</div>
-
-
-		</li>
-		<li test-id='90' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.verifyHomePageIsLaunchedAndNavigateToMainPage())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Verify home page is launched and navigate to main page</div>
-
-
-		</li>
-		<li test-id='91' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.clickOnLogoutButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then click on logout button</div>
-
-
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='12'>
-					<div class='test-heading'>
-						<span class='test-name'>Create User ID-API</span>
-						<span class='test-time'>Aug 14, 2022 11:29:37 PM</span>
-						<span class='test-status right pass'>Pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class="sr-filters bdd-filters">
-	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
-	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
-	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
-	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
-</div>
-
-<div class='scenario node' test-id='13' status='pass'>
-
-	<span class='duration right label'>00 00 21.321</span>
-	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Successful creation of UserId-scn_id:s2</div>
-	</div>
-	
-	
-		<div class='category-list'>
-				<span class='category label'>@SANITY</span>
-				<span class='category label'>@check</span>
-				<span class='category label'>@api</span>
-		</div>
-	
-	<ul class='steps'>
-		<li test-id='58' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.StepDefinitions.TestDataRequest.testdata())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And testdata</div>
-
-
-		</li>
-		<li test-id='64' class='node given Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.validUserid())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given valid userid</div>
-
-
-		</li>
-		<li test-id='65' class='node when Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.postMethodIsCalled())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When post method is called</div>
-
-
-		</li>
-		<li test-id='67' class='node then Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.responseCodeShouldBe(int))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then response code should be 201</div>
-
-
-		</li>
-		<li test-id='71' class='node and Pass' status='Pass'>
-			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.verifyUserId())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And verify user id</div>
-
-
-		</li>
-	</ul>
-</div>
-					</div>
-				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='14'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='4'>
 					<div class='test-heading'>
 						<span class='test-name'>Launch ApiDemos</span>
-						<span class='test-time'>Aug 14, 2022 11:29:38 PM</span>
+						<span class='test-time'>Aug 24, 2022 11:43:34 AM</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -522,9 +315,9 @@
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
 
-<div class='scenario outline node' test-id='15' status='pass'>
+<div class='scenario outline node' test-id='5' status='pass'>
 
-	<span class='duration right label'>00 00 44.137</span>
+	<span class='duration right label'>00 00 58.918</span>
 	<div class="bdd-test">
 		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Launch ApiDemo App-scn_id:s8</div>
 	</div>
@@ -537,7 +330,7 @@
 		</div>
 	
 	<ul class='steps'>
-		<li test-id='16' class='node scenario Pass' status='Pass'>
+		<li test-id='6' class='node scenario Pass' status='Pass'>
 			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Launch ApiDemo App-scn_id:s8</div>
 
 				<div class='category-list'>
@@ -546,11 +339,11 @@
 				</div>
 
 			<ul class='gc steps'>
-				<li test-id='60' class='gc given Pass' status='Pass'>
+				<li test-id='68' class='gc given Pass' status='Pass'>
 					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.launchapp(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given Launchapp:"Android"</h6>
 
 				</li>
-				<li test-id='76' class='gc and Pass' status='Pass'>
+				<li test-id='91' class='gc and Pass' status='Pass'>
 					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.verifyRandomElements()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Verify Random Elements</h6>
 
 				</li>
@@ -560,10 +353,10 @@
 </div>
 					</div>
 				</li>
-				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='17'>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='7'>
 					<div class='test-heading'>
-						<span class='test-name'>Login in Swag Labs Android App-APP</span>
-						<span class='test-time'>Aug 14, 2022 11:29:38 PM</span>
+						<span class='test-name'>Practice Automation Webpage-UI</span>
+						<span class='test-time'>Aug 24, 2022 11:43:34 AM</span>
 						<span class='test-status right pass'>Pass</span>
 					</div>
 					<div class='test-content hide'>
@@ -574,43 +367,301 @@
 	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
 </div>
 
-<div class='scenario outline node' test-id='18' status='pass'>
+<div class='scenario node' test-id='8' status='pass'>
 
-	<span class='duration right label'>00 00 40.341</span>
+	<span class='duration right label'>00 00 47.044</span>
 	<div class="bdd-test">
-		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario Outline: Login into Homepage-scn_id:s6</div>
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Navigate to homepage and logout-scn_id:s10</div>
 	</div>
 	
-		<div class='node-desc'><br><br><table class='markup-table table '><tr><td>platform</td></tr><tr><td>Android</td></tr></table></div>
 	
 		<div class='category-list'>
 				<span class='category label'>@SANITY</span>
-				<span class='category label'>@app</span>
+				<span class='category label'>@practicehome</span>
 		</div>
 	
 	<ul class='steps'>
-		<li test-id='19' class='node scenario Pass' status='Pass'>
-			<div class="step-name" title="()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Login into Homepage-scn_id:s6</div>
+		<li test-id='60' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.navigateToLoginpage())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to loginpage</div>
 
-				<div class='category-list'>
-						<span class='category label'>@SANITY</span>
-						<span class='category label'>@app</span>
-				</div>
 
-			<ul class='gc steps'>
-				<li test-id='59' class='gc given Pass' status='Pass'>
-					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.launchTheAppAndCheckLoginPageIsDisplayed(java.lang.String)"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given launch the app and check login page is displayed:"Android"</h6>
+		</li>
+		<li test-id='89' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.clickOnHomeLink())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And click on home link</div>
 
+
+		</li>
+		<li test-id='95' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.verifyHomePageIsLaunchedAndNavigateToMainPage())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Verify home page is launched and navigate to main page</div>
+
+
+		</li>
+		<li test-id='100' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.clickOnLogoutButton())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then click on logout button</div>
+
+
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='17' status='pass'>
+
+	<span class='duration right label'>00 00 43.137</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Login and check homepage-scn_id:s10</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@SANITY</span>
+				<span class='category label'>@practice</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='65' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.navigateToLoginpage())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to loginpage</div>
+
+
+		</li>
+		<li test-id='90' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.enterPracticeWebpageLoginCredentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And enter practice webpage login credentials</div>
+
+
+		</li>
+		<li test-id='94' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.verifyPracticeAutomationHomepageIsDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then verify practice automation homepage is displayed</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
 				</li>
-				<li test-id='70' class='gc when Pass' status='Pass'>
-					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.userEntersLoginCredentials()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user enters login credentials</h6>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>Login Swag Labs-UI</span>
+						<span class='test-time'>Aug 24, 2022 11:43:34 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
 
-				</li>
-				<li test-id='78' class='gc then Pass' status='Pass'>
-					<h6 class="step-name" title="com.example.demo.App.AppStepDefs.homepageShouldBeDisplayedInApp()"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Homepage should be displayed in app</h6>
+<div class='scenario node' test-id='10' status='pass'>
 
+	<span class='duration right label'>00 01 01.092</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Login into Swag Labs Homepage-scn_id:s5</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@SANITY</span>
+				<span class='category label'>@login</span>
+				<span class='category label'>@smokk</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='69' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.navigateToLoginpage())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to loginpage</div>
+
+
+		</li>
+		<li test-id='83' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.userLoggedInUsingWithProperCredentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user logged in using with proper credentials</div>
+
+
+		</li>
+		<li test-id='113' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.homepageShouldBeDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Homepage should be displayed</div>
+
+
+		</li>
+	</ul>
+</div>
+<div class='scenario node' test-id='11' status='pass'>
+
+	<span class='duration right label'>00 01 01.466</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Login into Swag Labs Homepage and check products page -scn_id:s5</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@SANITY</span>
+				<span class='category label'>@products</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='66' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.navigateToLoginpage())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given navigate to loginpage</div>
+
+
+		</li>
+		<li test-id='84' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.userLoggedInUsingWithProperCredentials())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When user logged in using with proper credentials</div>
+
+
+		</li>
+		<li test-id='114' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.homepageShouldBeDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then Homepage should be displayed</div>
+
+
+		</li>
+		<li test-id='118' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.verifyProductsIsDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And verify products is displayed</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
 				</li>
-			</ul>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>GetID-API</span>
+						<span class='test-time'>Aug 24, 2022 11:43:34 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='13' status='pass'>
+
+	<span class='duration right label'>00 00 10.558</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Get id-scn_id:s3</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@SANITY</span>
+				<span class='category label'>@api</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='63' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.api())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given api</div>
+
+
+		</li>
+		<li test-id='71' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.getMethodIsCalled())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When get method is called</div>
+
+
+		</li>
+		<li test-id='73' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.checkResponse())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then check response</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>Create User ID-API</span>
+						<span class='test-time'>Aug 24, 2022 11:43:34 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='19' status='pass'>
+
+	<span class='duration right label'>00 00 09.724</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: Successful creation of UserId-scn_id:s2</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@SANITY</span>
+				<span class='category label'>@api1</span>
+				<span class='category label'>@check</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='64' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.StepDefinitions.TestDataRequest.testdata())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given testdata</div>
+
+
+		</li>
+		<li test-id='70' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.validUserid())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given valid userid</div>
+
+
+		</li>
+		<li test-id='72' class='node when Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.postMethodIsCalled())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>When post method is called</div>
+
+
+		</li>
+		<li test-id='74' class='node then Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.responseCodeShouldBe(int))"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Then response code should be 201</div>
+
+
+		</li>
+		<li test-id='75' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.StepDefinitions.MyStepdefs.verifyUserId())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And verify user id</div>
+
+
+		</li>
+	</ul>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>Validate SeleniumEasy Webpage-UI</span>
+						<span class='test-time'>Aug 24, 2022 11:43:34 AM</span>
+						<span class='test-status right pass'>Pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class="sr-filters bdd-filters">
+	<a class="btn-floating waves-effect waves-light pass green" title="pass"><i class='material-icons'>check_circle</i></a>
+	<a class="btn-floating waves-effect waves-light fail red" title="fail"><i class='material-icons'>cancel</i></a>
+	<a class="btn-floating waves-effect waves-light skip blue" title="skip"><i class='material-icons'>redo</i></a>
+	<a class="btn-floating waves-effect waves-light clear grey" title="clear"><i class='material-icons'>clear</i></a>
+</div>
+
+<div class='scenario node' test-id='22' status='pass'>
+
+	<span class='duration right label'>00 00 29.937</span>
+	<div class="bdd-test">
+		<div class="scenario-name"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span> Scenario: LauchHomePage-scn_id:s9</div>
+	</div>
+	
+	
+		<div class='category-list'>
+				<span class='category label'>@SANITY</span>
+				<span class='category label'>@seleniumeasy</span>
+		</div>
+	
+	<ul class='steps'>
+		<li test-id='67' class='node given Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.verifyWebpageTitle())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>Given Verify Webpage title</div>
+
+
+		</li>
+		<li test-id='85' class='node and Pass' status='Pass'>
+			<div class="step-name" title="(com.example.demo.UI.UIStepdefs.verifyHomepageIsDisplayed())"><span class='status pass' title='Pass'><i class='material-icons'>check_circle</i></span>And Verify Homepage is displayed</div>
+
+
 		</li>
 	</ul>
 </div>
@@ -658,39 +709,6 @@
 			<ul id='category-collection' class='category-collection'>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@smokk</span>
-						<span class='category-status right'>
-						<span class='label pass'>1</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
-							
-							
-						</div>
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='2'>Login into Swag Labs Homepage-scn_id:s5</td>
-										<td><span class='test-status Pass'>Pass</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-				<li class='category displayed active'>
-					<div class='category-heading'>
 						<span class='category-name'>@check</span>
 						<span class='category-status right'>
 						<span class='label pass'>1</span>
@@ -713,41 +731,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='13'>Successful creation of UserId-scn_id:s2</td>
-										<td><span class='test-status Pass'>Pass</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-				<li class='category displayed active'>
-					<div class='category-heading'>
-						<span class='category-name'>@practicehome</span>
-						<span class='category-status right'>
-						<span class='label pass'>1</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
-							
-							
-						</div>
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='10'>Navigate to homepage and logout-scn_id:s10</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='19'>Successful creation of UserId-scn_id:s2</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
@@ -759,13 +744,14 @@
 					<div class='category-heading'>
 						<span class='category-name'>@SANITY</span>
 						<span class='category-status right'>
-						<span class='label pass'>11</span>
+						<span class='label pass'>10</span>
+						<span class='label fail'>2</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 11</span>
-							
+							<span status="pass" class='label green accent-4 white-text'>Passed: 10</span>
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 2</span>
 							
 						</div>
 						<div class='category-tests'>
@@ -779,129 +765,63 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='2'>Login into Swag Labs Homepage-scn_id:s5</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='2'>Login into Homepage-scn_id:s6</td>
+										<td><span class='test-status Fail'>Fail</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='3'>Login into Homepage-scn_id:s6</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='4'>LauchHomePage-scn_id:s9</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='5'>Launch ApiDemo App-scn_id:s8</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='6'>Get id-scn_id:s3</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='6'>Launch ApiDemo App-scn_id:s8</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='8'>Login and check homepage-scn_id:s10</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='8'>Navigate to homepage and logout-scn_id:s10</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='10'>Navigate to homepage and logout-scn_id:s10</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='10'>Login into Swag Labs Homepage-scn_id:s5</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
 										<td class='linked' test-id='11'>Login into Swag Labs Homepage and check products page -scn_id:s5</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='13'>Successful creation of UserId-scn_id:s2</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='13'>Get id-scn_id:s3</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:38 PM</td>
-										<td class='linked' test-id='15'>Launch ApiDemo App-scn_id:s8</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='17'>Login and check homepage-scn_id:s10</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:38 PM</td>
-										<td class='linked' test-id='16'>Launch ApiDemo App-scn_id:s8</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='19'>Successful creation of UserId-scn_id:s2</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:38 PM</td>
-										<td class='linked' test-id='18'>Login into Homepage-scn_id:s6</td>
-										<td><span class='test-status Pass'>Pass</span></td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='20'>Login into Homepage-scn_id:s6</td>
+										<td><span class='test-status Fail'>Fail</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:38 PM</td>
-										<td class='linked' test-id='19'>Login into Homepage-scn_id:s6</td>
-										<td><span class='test-status Pass'>Pass</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-				<li class='category displayed active'>
-					<div class='category-heading'>
-						<span class='category-name'>@api</span>
-						<span class='category-status right'>
-						<span class='label pass'>2</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
-							
-							
-						</div>
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='6'>Get id-scn_id:s3</td>
-										<td><span class='test-status Pass'>Pass</span></td>
-									</tr>
-									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='13'>Successful creation of UserId-scn_id:s2</td>
-										<td><span class='test-status Pass'>Pass</span></td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
-					</div>
-				</li>
-				<li class='category displayed active'>
-					<div class='category-heading'>
-						<span class='category-name'>@login</span>
-						<span class='category-status right'>
-						<span class='label pass'>1</span>
-						</span>
-					</div>
-					<div class='category-content hide'>
-						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
-							
-							
-						</div>
-						<div class='category-tests'>
-							<table class='bordered table-results'>
-								<thead>
-									<tr>
-										<th>Timestamp</th>
-										<th>TestName</th>
-										<th>Status</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='2'>Login into Swag Labs Homepage-scn_id:s5</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='22'>LauchHomePage-scn_id:s9</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
@@ -933,8 +853,151 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='8'>Login and check homepage-scn_id:s10</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='17'>Login and check homepage-scn_id:s10</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@api1</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='19'>Successful creation of UserId-scn_id:s2</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@practicehome</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='8'>Navigate to homepage and logout-scn_id:s10</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@app</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						<span class='label fail'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							<span status="fail" class='label red lighten-1 white-text'>Failed: 2</span>
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='2'>Login into Homepage-scn_id:s6</td>
+										<td><span class='test-status Fail'>Fail</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='3'>Login into Homepage-scn_id:s6</td>
+										<td><span class='test-status Pass'>Pass</span></td>
+									</tr>
+									<tr>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='20'>Login into Homepage-scn_id:s6</td>
+										<td><span class='test-status Fail'>Fail</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@products</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='11'>Login into Swag Labs Homepage and check products page -scn_id:s5</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
@@ -966,13 +1029,13 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Aug 14, 2022 11:29:38 PM</td>
-										<td class='linked' test-id='15'>Launch ApiDemo App-scn_id:s8</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='5'>Launch ApiDemo App-scn_id:s8</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 									<tr>
-										<td>Aug 14, 2022 11:29:38 PM</td>
-										<td class='linked' test-id='16'>Launch ApiDemo App-scn_id:s8</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='6'>Launch ApiDemo App-scn_id:s8</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
@@ -982,7 +1045,7 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@products</span>
+						<span class='category-name'>@api</span>
 						<span class='category-status right'>
 						<span class='label pass'>1</span>
 						</span>
@@ -1004,8 +1067,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='11'>Login into Swag Labs Homepage and check products page -scn_id:s5</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='13'>Get id-scn_id:s3</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
@@ -1037,8 +1100,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Aug 14, 2022 11:29:37 PM</td>
-										<td class='linked' test-id='4'>LauchHomePage-scn_id:s9</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='22'>LauchHomePage-scn_id:s9</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
@@ -1048,14 +1111,14 @@
 				</li>
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>@app</span>
+						<span class='category-name'>@smokk</span>
 						<span class='category-status right'>
-						<span class='label pass'>2</span>
+						<span class='label pass'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
 							
 							
 						</div>
@@ -1070,13 +1133,41 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Aug 14, 2022 11:29:38 PM</td>
-										<td class='linked' test-id='18'>Login into Homepage-scn_id:s6</td>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='10'>Login into Swag Labs Homepage-scn_id:s5</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>@login</span>
+						<span class='category-status right'>
+						<span class='label pass'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span status="pass" class='label green accent-4 white-text'>Passed: 1</span>
+							
+							
+						</div>
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
 									<tr>
-										<td>Aug 14, 2022 11:29:38 PM</td>
-										<td class='linked' test-id='19'>Login into Homepage-scn_id:s6</td>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2022 11:43:34 AM</td>
+										<td class='linked' test-id='10'>Login into Swag Labs Homepage-scn_id:s5</td>
 										<td><span class='test-status Pass'>Pass</span></td>
 									</tr>
 								</tbody>
@@ -1093,7 +1184,86 @@
 		</div>
 	</div>
 </div>
-<!-- category view --><div id='dashboard-view' class='view hide'>
+<!-- category view --><div id='exception-view' class='view hide'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='exception-collection' class='exception-collection'>
+				<li class='exception displayed active'>
+					<div class='exception-heading'>
+						<span class='exception-name'>org.openqa.selenium.NoSuchElementException</span>
+						<span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+					</div>
+					<div class='exception-content hide'>
+						<div class='exception-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>StackTrace</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Aug 24, 2022 11:44:12 AM</td>
+										<td class='linked' test-id='92'>Then Homepage should be displayed in app:"Android"</td>
+										<td>
+											<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'FVFH83HDQ05N', ip: '2401:4900:1ce0:18a5:e0bc:d540:f4de:25ef%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '11.4', java.version: '11.0.12'
+Driver info: io.appium.java_client.AppiumDriver
+Command: [6d5cc09b-4ac3-43c2-bd7b-76cb3d1b94a9, findElement {using=xpath, value=//android.view.ViewGroup[@content-desc="test-ALL ITEMS"]}]
+Capabilities {appium:app: /Users/sadhishkumar.thiagar..., appium:appActivity: com.swaglabsmobileapp.MainA..., appium:appPackage: com.swaglabsmobileapp, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {app: /Users/sadhishkumar.thiagar..., appActivity: com.swaglabsmobileapp.MainA..., appPackage: com.swaglabsmobileapp, automationName: UiAutomator2, deviceName: pixel, platformName: android, udid: emulator-5554}, appium:deviceApiLevel: 32, appium:deviceManufacturer: Google, appium:deviceModel: sdk_gphone64_arm64, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.75, appium:platformVersion: 12, appium:statBarHeight: 66, appium:takesScreenshot: true, appium:udid: emulator-5554, appium:viewportRect: {height: 2230, left: 0, top: 66, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: android}
+Session ID: 6d5cc09b-4ac3-43c2-bd7b-76cb3d1b94a9
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:180)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at com.example.demo.App.AppStepDefs.homepageShouldBeDisplayedInApp(AppStepDefs.java:160)
+	at ✽.Homepage should be displayed in app:"Android"(file:///Users/sadhishkumar.thiagarajan/IdeaProjects/Api/src/test/resources/features/Login_SauceLabs_AndroidApp.feature:8)
+</textarea>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='exception-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- exception view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -1107,31 +1277,31 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Scenarios
-					<div class='panel-lead'>9</div>
+					<div class='panel-lead'>10</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>29</div>
+					<div class='panel-lead'>32</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Aug 14, 2022 11:29:31 PM</div>
+					<div class='panel-lead'>Aug 24, 2022 11:43:26 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Aug 14, 2022 11:30:30 PM</div>
+			 		<div class='panel-lead'>Aug 24, 2022 11:44:35 AM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>00 00 59.789</div>
+					<div class='panel-lead'>00 01 09.281</div>
 				</div>
 			</div>
 			<div class='col s6'>
@@ -1147,7 +1317,7 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>@smokk</td>
+							<td>@check</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -1156,7 +1326,25 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@check</td>
+							<td>@SANITY</td>
+							<td>10</td>
+							<td>2</td>
+							<td>0</td>
+							<td>
+									83.333%
+							</td>
+						</tr>
+						<tr>
+							<td>@practice</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@api1</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -1174,34 +1362,16 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@SANITY</td>
-							<td>11</td>
-							<td>0</td>
-							<td>0</td>
-							<td>
-									100%
-							</td>
-						</tr>
-						<tr>
-							<td>@api</td>
+							<td>@app</td>
+							<td>1</td>
 							<td>2</td>
 							<td>0</td>
-							<td>0</td>
 							<td>
-									100%
+									33.333%
 							</td>
 						</tr>
 						<tr>
-							<td>@login</td>
-							<td>1</td>
-							<td>0</td>
-							<td>0</td>
-							<td>
-									100%
-							</td>
-						</tr>
-						<tr>
-							<td>@practice</td>
+							<td>@products</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -1219,7 +1389,7 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@products</td>
+							<td>@api</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -1237,8 +1407,17 @@
 							</td>
 						</tr>
 						<tr>
-							<td>@app</td>
-							<td>2</td>
+							<td>@smokk</td>
+							<td>1</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>@login</td>
+							<td>1</td>
 							<td>0</td>
 							<td>0</td>
 							<td>
@@ -1257,23 +1436,23 @@
 		<script>
 			var statusGroup = {
                 parentCount: 7,
-				passParent: 7,
-				failParent: 0,
+				passParent: 6,
+				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
 				warningParent: 0,
 				skipParent: 0,
-				childCount: 9,
+				childCount: 10,
 				passChild: 9,
-				failChild: 0,
+				failChild: 1,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
 				infoChild: 0,
-				grandChildCount: 29,
-				passGrandChild: 29,
-				failGrandChild: 0,
+				grandChildCount: 32,
+				passGrandChild: 31,
+				failGrandChild: 1,
 				fatalGrandChild: 0,
 				errorGrandChild: 0,
 				warningGrandChild: 0,
@@ -1284,7 +1463,7 @@
 		
 		<script>
 			var timeline = {
-			        "Login Swag Labs-UI":52.914,"Validate SeleniumEasy Webpage-UI":34.069,"GetID-API":19.002,"Practice Automation Webpage-UI":43.016,"Create User ID-API":21.321,"Launch ApiDemos":44.137,"Login in Swag Labs Android App-APP":40.341
+			        "Login in Swag Labs Android App-APP":52.189,"Launch ApiDemos":58.919,"Practice Automation Webpage-UI":47.044,"Login Swag Labs-UI":61.469,"GetID-API":10.558,"Create User ID-API":9.725,"Validate SeleniumEasy Webpage-UI":29.938
 			};
 		</script>
 		

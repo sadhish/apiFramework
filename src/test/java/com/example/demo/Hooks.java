@@ -44,11 +44,23 @@ public void launchApp(){
 
     @After(order=1)
     public void takeScreenshot(Scenario scenario) throws IOException {
-        if(driver!=null) {
-             if(scenario.isFailed()) {
-                    Allure.addAttachment("screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).
-                    getScreenshotAs(OutputType.BYTES)));
-                 }
+//        if(driver!=null) {
+//             if(scenario.isFailed()) {
+//                    Allure.addAttachment("screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).
+//                    getScreenshotAs(OutputType.BYTES)));
+//                 }
+//        }
+        if(threadLocal.get()!=null) {
+            if(scenario.isFailed()) {
+                Allure.addAttachment("screenshot", new ByteArrayInputStream(((TakesScreenshot) threadLocal.get()).
+                        getScreenshotAs(OutputType.BYTES)));
+            }
+        }
+        if(driverThreadLocal.get()!=null){
+            if(scenario.isFailed()){
+                Allure.addAttachment("Mobile screenshot", new ByteArrayInputStream(((TakesScreenshot) threadLocal.get()).
+                        getScreenshotAs(OutputType.BYTES)));
+            }
         }
         }
 

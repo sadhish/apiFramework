@@ -17,7 +17,6 @@ import org.testng.Assert;
 import java.time.Duration;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 public class UIStepdefs extends BaseClass {
     @Autowired
@@ -56,8 +55,7 @@ public class UIStepdefs extends BaseClass {
 
     @Then("Homepage should be displayed")
     public void homepageShouldBeDisplayed() {
-      System.out.println(threadLocal.get().getTitle());
-      //Assert.assertEquals(driver.getTitle(),"Swag Labs");
+        System.out.println(threadLocal.get().getTitle());
         Assert.assertEquals(threadLocal.get().getTitle(),"Swag Labs");
     }
     @And("verify products is displayed")
@@ -67,12 +65,6 @@ public class UIStepdefs extends BaseClass {
               findElement(By.xpath("//*[@id=\"header_container\"]/div[2]/span")).getText(),"PRODUCTS");
     }
 
-//    @When("user enters login credentials in applitools login page")
-//    public void userEntersLoginCredentialsInApplitoolsLoginPage() {
-//        threadLocal.get().findElement(By.id("username")).sendKeys(testData.get("username"));
-//        threadLocal.get().findElement(By.id("password")).sendKeys( testData.get("password"));
-//        threadLocal.get().findElement(By.id("log-in")).click();
-//    }
 
 @SneakyThrows
     @And("Homepage should be displayed with title")
@@ -102,9 +94,6 @@ public class UIStepdefs extends BaseClass {
         WebDriverWait webDriverWait=new WebDriverWait(threadLocal.get(), Duration.ofSeconds(3000));
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("username"))).sendKeys(testData.get("username"));
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("password"))).sendKeys(testData.get("password"));
-       // threadLocal.get().findElement(By.id("username")).sendKeys(testData.get("username"));
-        //threadLocal.get().findElement(By.id("password")).sendKeys(testData.get("password"));
-        //threadLocal.get().findElement(By.id("submit")).click();
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.id("submit"))).click();
 
     }
