@@ -130,9 +130,5 @@ public class MyStepdefs extends BaseClass {
 //        fname=response.jsonPath().get("data.first_name[0]");
 //        lname=response.jsonPath().get("data.last_name[0]");
     }
-    @And("verify user id")
-    public void verifyUserId() {
-    }
-
 
 }
