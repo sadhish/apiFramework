@@ -4,12 +4,13 @@ Feature: Create User ID-API
     #Given BaseURl
     Given testdata
 
-  @SANITY @api1 @check
+  @SANITY @api1 @check @smoke
     Scenario:Successful creation of UserId-scn_id:s2
     Given valid userid
     When post method is called
     Then response code should be 201
-    And verify user id
+
+    #And verify user id
 
 
   @Smo

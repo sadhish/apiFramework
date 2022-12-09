@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
                },
         plugin = {"pretty","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "json:test-output/cucumber-report/cucumber.json",
                 "html:test-output/cucumber-report/cucumber.html","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
-        },monochrome = true,tags =("@SANITY")
+        },monochrome = true,tags =("@swag")
 )
 @Test
 public class TestRunner extends AbstractTestNGCucumberTests {

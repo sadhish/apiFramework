@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import io.appium.java_client.AppiumDriver;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -102,15 +103,17 @@ return null;
 
 
         if(browser.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "/Users/sadhishkumar.thiagarajan/Downloads/chromedriver");
 
-            driver = new ChromeDriver();
+           // System.setProperty("webdriver.chrome.driver", "/Users/sadhishkumar.thiagarajan/Downloads/chromedriver");
+            driver= WebDriverManager.chromedriver().create();
+            //driver = new ChromeDriver();
 
             threadLocal.set(driver);
         }
         else if(browser.equalsIgnoreCase("firefox")){
             System.setProperty("webdriver.gecko.driver", "/Users/sadhishkumar.thiagarajan/Downloads/geckodriver");
-            driver = new FirefoxDriver();
+            driver= WebDriverManager.firefoxdriver().create();
+           // driver = new FirefoxDriver();
         }
         return threadLocal.get();
     }

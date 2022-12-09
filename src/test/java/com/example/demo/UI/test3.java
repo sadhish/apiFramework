@@ -3,6 +3,9 @@ package com.example.demo.UI;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.devtools.DevTools;
 
 public class test3 {
 //    static test t = new test();
@@ -33,11 +36,16 @@ public class test3 {
 //
 //        t1.closeExecutor();
 //    }
+public static WebDriver driver;
 public static void main(String[] args) {
-    RequestSpecification requestSpecification=
-            RestAssured.given().baseUri("https://gorest.co.in");
-    Response response=requestSpecification.get("/public/v2/users/3");
-    System.out.println(response.getStatusCode());
+//    RequestSpecification requestSpecification=
+//            RestAssured.given().baseUri("https://gorest.co.in");
+//    Response response=requestSpecification.get("/public/v2/users/3");
+//    System.out.println(response.getStatusCode());
+    String username="administrator@automation.com";
+    String password="Ortho@administrator123";
+    System.setProperty("webdriver.chrome.driver", "/Users/sadhishkumar.thiagarajan/Downloads/chromedriver");
+
 }
     }
 
